@@ -2,6 +2,7 @@ class CharactersController < ApplicationController
 
     def index
         characters = Character.all
-        render json: character, status: :ok
+        render json: characters, status: :ok
     end
+    
 end
