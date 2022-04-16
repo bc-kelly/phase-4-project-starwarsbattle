@@ -1,11 +1,18 @@
 import React from "react";
-import CharacterCard from './HouseCard'
+import CharacterCard from './CharacterCard'
+import "./CharacterCollection.css"
 
-function CharacterCollection() {
+function CharacterCollection( { characters }) {
+
+    const characterCard = characters.map(character => {
+        return <CharacterCard key={character.id} character={character} />
+    })
 
     return (
         
-        <CharacterCard />
+        <div className="characterCollection">
+            {characterCard}
+        </div>
     )
 
 

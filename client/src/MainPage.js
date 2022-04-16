@@ -1,7 +1,7 @@
 import React, {useEffect, useState } from "react";
 import CharacterCollection from "./CharacterCollection";
 
-const charactersAPI = 'http://localhost:3000/characters';
+const charactersAPI = 'http://localhost:4000/characters';
 
 function MainPage(){
 
@@ -11,7 +11,7 @@ function MainPage(){
         fetch(charactersAPI)
         .then(response => response.json())
         .then(charactersData => {
-          // console.log(botsData)
+          console.log(charactersData)
           setCharacters(charactersData)
         })
       }, [])
@@ -19,7 +19,6 @@ function MainPage(){
     return (
         <div>
           <CharacterCollection  characters={characters} />
-          
         </div>
       )
 
