@@ -33,7 +33,11 @@ function MainPage(){
         if (!battleChars.includes(item)) {
           setBattleChars([...battleChars, item])
         }
+        if (battleChars.length === 2) {
+          setBattleChars([...battleChars])
+        }
       }
+      //if length of battle chars is equal to two, dont add any more
 
     return (
         <div>

@@ -1,5 +1,6 @@
 import React from "react";
 import CharacterCard from "./CharacterCard";
+import "./YourBattleChars.css"
 
 function YourBattleChars({battleChars, setBattleChars}) {
 
@@ -15,8 +16,13 @@ function YourBattleChars({battleChars, setBattleChars}) {
 
     return (
         <div>
-            {showBatCharacters}
-          
+            <div className="character-title">
+                <h3>Battle Characters</h3>
+            </div>
+            <div className="batCharContainer">
+                {showBatCharacters}
+            
+            </div>
         </div>
       );
 }

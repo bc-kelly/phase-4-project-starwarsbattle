@@ -17,8 +17,15 @@ function CharacterCollection( { characters, planets, handleAddToBattleChars }) {
 
     return (
         <div>
+            <div className="character-title">
+                <h3>Characters</h3>
+            </div>
             <div className="characterCollection">
+                
                 {characterCard}
+            </div>
+            <div className="character-title">
+                <h3>Planets</h3>
             </div>
             <div className="characterCollection">
                 {planetCard}
