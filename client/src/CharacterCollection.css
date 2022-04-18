@@ -3,7 +3,7 @@
     /* flex-wrap: wrap; */
     margin: 20px;
     /* justify-content: center; */
-    overflow-x: scroll;
+    overflow: auto;
 }
 
 body {

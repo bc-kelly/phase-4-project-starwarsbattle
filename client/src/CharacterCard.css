@@ -1,9 +1,15 @@
 .characterCard {
+    min-width: 400px;
+    min-height: 250px;
+    margin: 20px;
     background-color: #0bf82b;
     border-radius: 10px;
-    /* text-emphasis-color: #080808; */
+    font-size: 12px;
     color: black;
-    margin: 20px;
-    width: 400px;
+}
+
+img{
+    min-width: 250px;
+    height: 200px;
 }
 
