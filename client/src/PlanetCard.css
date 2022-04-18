@@ -1,9 +1,9 @@
-.characterCard {
+.planetCard {
     background-color: #0bf82b;
     border-radius: 10px;
     /* text-emphasis-color: #080808; */
     color: black;
     margin: 20px;
     width: 400px;
+    
 }
-
