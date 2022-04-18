@@ -3,7 +3,7 @@ import CharacterCard from './CharacterCard'
 import PlanetCard from "./PlanetCard"
 import "./CharacterCollection.css"
 
-function CharacterCollection( { characters, planets, handleAddToBattleChars }) {
+function CharacterCollection( { characters, planets, handleAddToBattleChars, handleAddPlanetToBattle }) {
 
     const characterCard = characters.map(character => {
         console.log(character)
@@ -12,7 +12,7 @@ function CharacterCollection( { characters, planets, handleAddToBattleChars }) {
     })
 
     const planetCard = planets.map(planet => {
-        return <PlanetCard key={planet.id} planet={planet} />
+        return <PlanetCard key={planet.id} planet={planet} onCardClick={handleAddPlanetToBattle} />
     })
 
     return (
@@ -21,7 +21,6 @@ function CharacterCollection( { characters, planets, handleAddToBattleChars }) {
                 <h3>Characters</h3>
             </div>
             <div className="characterCollection">
-                
                 {characterCard}
             </div>
             <div className="character-title">

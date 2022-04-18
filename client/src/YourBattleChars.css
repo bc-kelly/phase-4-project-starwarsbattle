@@ -1,3 +1,29 @@
 .batCharContainer{
     display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
 }
+
+.batPlanetContainer{
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: black;
+    /* align-items:center; */
+    /* justify-content: center; */
+    /* margin: auto; */
+    display: flex;
+}
+
+.batPlanetContainer .planetCard {
+    max-width: 300px;
+    max-height: 250px;
+    align-items: center;
+}
+
+.batPlanet {
+    margin-left: 40%;
+}
+
+

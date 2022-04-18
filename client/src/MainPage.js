@@ -9,6 +9,7 @@ function MainPage(){
 
     const [characters, setCharacters] = useState([])
     const [planets, setPlanets] = useState([])
+    const [battlePlanets, setBattlePlanets] = useState([])
     const [battleChars, setBattleChars] = useState([])
 
     useEffect(()=>{
@@ -37,12 +38,21 @@ function MainPage(){
           setBattleChars([...battleChars])
         }
       }
-      //if length of battle chars is equal to two, dont add any more
+
+      function handleAddPlanetToBattle(item) {
+        if (!battlePlanets.includes(item)) {
+          setBattlePlanets([...battlePlanets, item])
+        }
+        if (battlePlanets.length === 1) {
+          setBattlePlanets([...battlePlanets])
+        }
+      }
+     
 
     return (
         <div>
-          <CharacterCollection  characters={characters} planets={planets} handleAddToBattleChars={handleAddToBattleChars}/>
-          <YourBattleChars battleChars={battleChars} setBattleChars={setBattleChars}/>
+          <CharacterCollection  characters={characters} planets={planets} handleAddToBattleChars={handleAddToBattleChars} handleAddPlanetToBattle={handleAddPlanetToBattle} />
+          <YourBattleChars battleChars={battleChars} setBattleChars={setBattleChars} battlePlanets={battlePlanets} />
         </div>
       )
 }
