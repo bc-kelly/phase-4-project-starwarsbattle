@@ -1,6 +1,7 @@
 import React, {useEffect, useState } from "react";
 import CharacterCollection from "./CharacterCollection";
 import YourBattleChars from "./YourBattleChars";
+import NewCharacterForm from "./NewCharacterForm";
 
 const charactersAPI = 'http://localhost:4000/characters';
 const planetsAPI = 'http://localhost:4000/planets'
@@ -47,12 +48,28 @@ function MainPage(){
           setBattlePlanets([...battlePlanets])
         }
       }
+
+      function handleNewCharacter(character){
+        fetch(charactersAPI, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(character),
+        })
+        .then(response => response.json())
+        .then(json => {
+        setCharacters([...characters, json])
+        })
+        .catch(err => console.error(err))
+    }
      
 
     return (
         <div>
           <CharacterCollection  characters={characters} planets={planets} handleAddToBattleChars={handleAddToBattleChars} handleAddPlanetToBattle={handleAddPlanetToBattle} />
           <YourBattleChars characters={characters} battleChars={battleChars} setBattleChars={setBattleChars} battlePlanets={battlePlanets} />
+          <NewCharacterForm handleNewCharacter={handleNewCharacter}/>
         </div>
       )
 }

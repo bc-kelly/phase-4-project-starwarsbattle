@@ -30,7 +30,7 @@ function YourBattleChars({battleChars, setBattleChars, battlePlanets, characters
     return (
         <div>
             <div className="character-title">
-                <h3>Battle Characters</h3>
+                <h3>Get Ready to Battle</h3>
             </div>
             <div className="batCharContainer">
                 {showBatCharacters}

@@ -1,12 +1,11 @@
 import React from "react";
-// import './About.css';
-
+import './About.css';
 
 function About(){
     return (
     <div>
-        <div id="about">
-            <h1>test</h1>
+        <div className="about">
+            <h1>About the game:</h1>
         </div>
     </div>
     );

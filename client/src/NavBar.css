@@ -1,0 +1,12 @@
+.nav {
+    background-color: red;
+    font-size: 30px;
+    justify-content: space-evenly;
+    padding: 0px 40vh 0px 40vh;
+}
+
+.nav-header {
+    color: white;
+    font-size: 40px;
+   
+}

@@ -18,13 +18,13 @@ function CharacterCollection( { characters, planets, handleAddToBattleChars, han
     return (
         <div>
             <div className="character-title">
-                <h3>Characters</h3>
+                <h3>Choose Your Characters (2) </h3>
             </div>
             <div className="characterCollection">
                 {characterCard}
             </div>
             <div className="character-title">
-                <h3>Planets</h3>
+                <h3>Choose your Battle Planet</h3>
             </div>
             <div className="characterCollection">
                 {planetCard}
