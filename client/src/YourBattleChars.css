@@ -26,4 +26,26 @@
     margin-left: 40%;
 }
 
+.weapon-text {
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.weapon-text-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.weapon-div-one {
+    background-color: red;
+    margin-left: 30px;
+}
+
+.weapon-div-two {
+    background-color: red;
+    margin-right: 30px;
+}
+
 

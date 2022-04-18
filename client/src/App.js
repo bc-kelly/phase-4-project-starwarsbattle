@@ -1,13 +1,23 @@
 import React from "react";
-// import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import MainPage from "./MainPage"
+import { Routes, Route } from "react-router-dom";
+import MainPage from "./MainPage";
+import NavBar from "./NavBar";
+import Home from "./Home";
+import About from "./About";
 
 import './App.css';
 
 function App() {
   return (
+   
     <div className="App">
-      <MainPage />
+      {/* <MainPage /> */}
+      <NavBar />
+          <Routes>
+                <Route exact path ="/" element= { <Home /> } /> 
+                <Route path ="/about" element= { <About  /> } /> 
+                <Route path="/mainpage" element= { <MainPage />} />
+          </Routes>
     </div>
   );
 }

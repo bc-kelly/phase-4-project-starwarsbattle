@@ -52,7 +52,7 @@ function MainPage(){
     return (
         <div>
           <CharacterCollection  characters={characters} planets={planets} handleAddToBattleChars={handleAddToBattleChars} handleAddPlanetToBattle={handleAddPlanetToBattle} />
-          <YourBattleChars battleChars={battleChars} setBattleChars={setBattleChars} battlePlanets={battlePlanets} />
+          <YourBattleChars characters={characters} battleChars={battleChars} setBattleChars={setBattleChars} battlePlanets={battlePlanets} />
         </div>
       )
 }

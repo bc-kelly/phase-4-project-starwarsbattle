@@ -9,6 +9,7 @@ function CharacterCard( { character, onCardClick }){
             <img src={character.image} alt={character.name} />
             <h3> Name: {character.name} </h3>
             <h3> Movie: {character.movie} </h3>
+            <h3> Weapons: {character.weapons} </h3>
         </div>
     )
 
