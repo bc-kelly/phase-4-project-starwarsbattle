@@ -16,7 +16,7 @@ function MainPage(){
         fetch(charactersAPI)
         .then(response => response.json())
         .then(charactersData => {
-          console.log(charactersData)
+          // console.log(charactersData)
           setCharacters(charactersData)
         })
       }, [])
@@ -25,7 +25,7 @@ function MainPage(){
         fetch(planetsAPI)
         .then(response => response.json())
         .then(planetsData => {
-          console.log(planetsData)
+          // console.log(planetsData)
           setPlanets(planetsData)
         })
       }, []) 
@@ -50,7 +50,7 @@ function MainPage(){
     
     return (
         <div>
-          <CharacterCollection  characters={characters} planets={planets} handleAddToBattleChars={handleAddToBattleChars} handleAddPlanetToBattle={handleAddPlanetToBattle} />
+          <CharacterCollection  characters={characters} planets={planets} handleAddToBattleChars={handleAddToBattleChars} handleAddPlanetToBattle={handleAddPlanetToBattle} setCharacters={setCharacters} />
           <YourBattleChars characters={characters} battleChars={battleChars} setBattleChars={setBattleChars} battlePlanets={battlePlanets} />
         </div>
       )

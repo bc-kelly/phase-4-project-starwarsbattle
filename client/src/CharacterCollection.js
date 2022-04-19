@@ -3,11 +3,11 @@ import CharacterCard from './CharacterCard'
 import PlanetCard from "./PlanetCard"
 import "./CharacterCollection.css"
 
-function CharacterCollection( { characters, planets, handleAddToBattleChars, handleAddPlanetToBattle }) {
+function CharacterCollection( { characters, planets, handleAddToBattleChars, handleAddPlanetToBattle, setCharacters }) {
 
     const characterCard = characters.map(character => {
-        console.log(character)
-        return <CharacterCard key={character.id} character={character} onCardClick={handleAddToBattleChars} />
+        // console.log(character)
+        return <CharacterCard key={character.id} character={character} onCardClick={handleAddToBattleChars} set={setCharacters} />
 
     })
 
