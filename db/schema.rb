@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_18_183549) do
+ActiveRecord::Schema.define(version: 2022_04_19_143501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,24 @@ ActiveRecord::Schema.define(version: 2022_04_18_183549) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "user_battles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "battle_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["battle_id"], name: "index_user_battles_on_battle_id"
+    t.index ["user_id"], name: "index_user_battles_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "battles", "characters"
   add_foreign_key "battles", "planets"
+  add_foreign_key "user_battles", "battles"
+  add_foreign_key "user_battles", "users"
 end

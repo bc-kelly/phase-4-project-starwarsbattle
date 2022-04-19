@@ -41,7 +41,7 @@ function NewCharacterForm (){
     }
     
         return(   
-            <div>
+            <div className="form-div" >
                 <form onSubmit= {handleFormSubmit}>
                     <div className="form">
                         <label htmlFor="name">Name</label>
