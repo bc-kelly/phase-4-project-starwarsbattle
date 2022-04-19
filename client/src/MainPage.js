@@ -69,7 +69,8 @@ function MainPage(){
         <div>
           <CharacterCollection  characters={characters} planets={planets} handleAddToBattleChars={handleAddToBattleChars} handleAddPlanetToBattle={handleAddPlanetToBattle} />
           <YourBattleChars characters={characters} battleChars={battleChars} setBattleChars={setBattleChars} battlePlanets={battlePlanets} />
-          <NewCharacterForm handleNewCharacter={handleNewCharacter}/>
+          {/* <NewCharacterForm handleNewCharacter={handleNewCharacter}/> */}
+          {/* i dont think this should be here bc its showing up on the main page */}
         </div>
       )
 }

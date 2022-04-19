@@ -1,3 +1,33 @@
+/* html {
+    background: url(https://images.squarespace-cdn.com/content/v1/51b3dc8ee4b051b96ceb10de/1562167856904-7YDUWZLI6Z6JD4PCLAHT/daisy-ridley-teases-an-epic-lightsaber-fight-scene-between-rey-and-kylo-in-star-wars-the-rise-of-skywalker-social.jpg) no-repeat center top fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
+
 .home {
     color: white;
+    font-family: 'Geostar';
+    /* background-image: url("https://images.squarespace-cdn.com/content/v1/51b3dc8ee4b051b96ceb10de/1562167856904-7YDUWZLI6Z6JD4PCLAHT/daisy-ridley-teases-an-epic-lightsaber-fight-scene-between-rey-and-kylo-in-star-wars-the-rise-of-skywalker-social.jpg") */
+
+}
+
+.home-pic {
+    /* display: flex; */
+    margin: auto;
+    max-width: 900px;
+    height: 600px;
+    /* background-color: yellow; */
+    /* background-image: url("https://images.squarespace-cdn.com/content/v1/51b3dc8ee4b051b96ceb10de/1562167856904-7YDUWZLI6Z6JD4PCLAHT/daisy-ridley-teases-an-epic-lightsaber-fight-scene-between-rey-and-kylo-in-star-wars-the-rise-of-skywalker-social.jpg") */
+}
+
+.home-pic img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.test-pic img {
+    max-width: 100%;
 }

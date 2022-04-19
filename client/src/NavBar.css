@@ -1,8 +1,10 @@
 .nav {
     background-color: red;
     font-size: 30px;
-    justify-content: space-evenly;
-    padding: 0px 40vh 0px 40vh;
+    justify-content: space-around;
+    /* padding: 0px 40vh 0px 40vh; */
+    display: flex;
+
 }
 
 .nav-header {
