@@ -1,7 +1,26 @@
-import React from "react"
+import React, {useState } from "react";
 import "./NewCharacterForm.css"
 
-function NewCharacterForm ({handleNewCharacter}){
+const charactersAPI = 'http://localhost:4000/characters';
+
+function NewCharacterForm (){
+
+    const [characters, setCharacters] = useState([])
+
+    function handleNewCharacter(character){
+        fetch(charactersAPI, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(character),
+        })
+        .then(response => response.json())
+        .then(json => {
+        setCharacters([...characters, json])
+        })
+        .catch(err => console.error(err))
+    }
 
     function handleFormSubmit(event){
         event.preventDefault()
