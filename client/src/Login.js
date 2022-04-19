@@ -5,14 +5,14 @@ import SignUpForm from "./SignUpForm";
 // import { Button } from "../styles";
 import "./Login.css"
 
-function Login({ onLogin }) {
+function Login({ setUser }) {
   const [showLogin, setShowLogin] = useState(true);
 
   return (
     <wrapper className= "login">
       {showLogin ? (
         <>
-          <LoginForm onLogin={onLogin} />
+          <LoginForm setUser={setUser} />
           <divider />
           <p>
             Don't have an account? &nbsp;
@@ -23,7 +23,7 @@ function Login({ onLogin }) {
         </>
       ) : (
         <>
-          <SignUpForm onLogin={onLogin} />
+          <SignUpForm setUser={setUser} />
           <divider />
           <p>
             Already have an account? &nbsp;

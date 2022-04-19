@@ -24,7 +24,7 @@ function App() {
     });
   }, []);
 
-  if (!user) return <LoginForm onLogin={setUser} />;
+  // if (!user) return <LoginForm onLogin={setUser} />;
 
   return (
   
@@ -34,7 +34,7 @@ function App() {
           <Routes>
                 <Route exact path ="/" element= { <Home /> } /> 
                 <Route path ="/about" element= { <About  /> } /> 
-                <Route path ="/login" element= { <Login  /> } />
+                <Route path ="/login" element= { <Login setUser={setUser} /> } />
                 <Route path="/mainpage" element= { <MainPage />} />
                 <Route path="/newcharacterform" element= { <NewCharacterForm /> } />
           </Routes>
