@@ -3,15 +3,15 @@ import CharacterCard from "./CharacterCard";
 import PlanetCard from "./PlanetCard";
 import "./YourBattleChars.css"
 
-function YourBattleChars({battleChars, setBattleChars, battlePlanets, characters}) {
+function YourBattleChars({battleChars, battlePlanets, handleDeleteCharacter }) {
 
     const showBatCharacters = battleChars.map((batChar) => {
         return (
             <CharacterCard 
             key={batChar.id} 
             character={batChar}
-            />
-           
+            onClickDelete={handleDeleteCharacter}/>
+        
         )
     })
     const showBatPlanets = battlePlanets.map((batPlanet) => {

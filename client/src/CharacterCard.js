@@ -1,19 +1,11 @@
 import React from "react";
 import "./CharacterCard.css"
 
-const charactersAPI = '/characters';
+// const charactersAPI = '/characters';
 
-function CharacterCard( { character, onCardClick, setCharacters, characters }){
-    console.log(character)
+function CharacterCard( { character, onCardClick, onClickDelete }){
+    // console.log(character)
 
-    function handleDeleteCharacter(deletedCharacter){
-        // console.log(deletedCharacter)
-        fetch(`${charactersAPI}/${deletedCharacter.id}`, {
-        method: 'DELETE'
-        });
-        const deleteCharacters = characters.filter(item => item.id !== deletedCharacter.id)
-        setCharacters(deleteCharacters);
-    }
 
     
     // function handleEditClick() {
@@ -38,7 +30,11 @@ function CharacterCard( { character, onCardClick, setCharacters, characters }){
                 <button className='edit'> 
                     <a href="http://localhost:4000/about"> edit </a> 
                 </button>
-                <button className='delete' onClick={()=>handleDeleteCharacter(character)}> delete </button>
+                <button className='delete' 
+                    onClick={(event) =>{
+                    event.stopPropagation()
+                    onClickDelete(character)
+                }}> delete </button>
             </div>
         </div>
     )

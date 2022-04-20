@@ -7,6 +7,7 @@ import About from "./About";
 import NewCharacterForm from "./NewCharacterForm";
 import Login from "./Login";
 import LoginForm from "./LoginForm";
+import EditCharacter from "./EditCharacter";
 // import SignUpForm from "./SignUpForm";
 
 import './App.css';
@@ -37,6 +38,7 @@ function App() {
                 <Route path ="/login" element= { <Login setUser={setUser} /> } />
                 <Route path="/mainpage" element= { <MainPage />} />
                 <Route path="/newcharacterform" element= { <NewCharacterForm /> } />
+                <Route path="/editcharacter" element= { <EditCharacter /> } />
           </Routes>
     </div>
   );

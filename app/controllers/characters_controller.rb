@@ -5,6 +5,13 @@ class CharactersController < ApplicationController
         render json: characters, status: :ok
     end
 
+    def show
+        character = Character.find(params[:id])
+        render json: character, status: :ok
+    rescue ActiveRecord::RecordNotFound
+        render json: {error: "Character not found"}, status: :not_found
+    end
+
     def create
         character = Character.create!(character_params)
         render json: character, status: :created

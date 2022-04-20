@@ -3,11 +3,11 @@ import CharacterCard from './CharacterCard'
 import PlanetCard from "./PlanetCard"
 import "./CharacterCollection.css"
 
-function CharacterCollection( { characters, planets, handleAddToBattleChars, handleAddPlanetToBattle, setCharacters }) {
+function CharacterCollection( { characters, planets, handleAddToBattleChars, handleAddPlanetToBattle, handleDeleteCharacter}) {
 
     const characterCard = characters.map((character) => {
         // console.log(character)
-        return <CharacterCard key={character.id} character={character} onCardClick={handleAddToBattleChars} setCharacters={setCharacters} characters ={characters} />
+        return <CharacterCard key={character.id} character={character} onCardClick={handleAddToBattleChars} onClickDelete={handleDeleteCharacter}/>
 
     })
 
@@ -30,7 +30,6 @@ function CharacterCollection( { characters, planets, handleAddToBattleChars, han
                 {planetCard}
             </div>
         </div>
-       
     )
 
 

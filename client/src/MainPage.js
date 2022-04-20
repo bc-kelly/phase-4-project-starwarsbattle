@@ -47,11 +47,22 @@ function MainPage(){
           setBattlePlanets([...battlePlanets])
         }
       }
+
+      function handleDeleteCharacter(deletedCharacter){
+        // console.log(deletedCharacter)
+        fetch(`${charactersAPI}/${deletedCharacter.id}`, {
+        method: 'DELETE'
+        });
+        const deleteCharacters = characters.filter(item => item.id !== deletedCharacter.id)
+        setCharacters(deleteCharacters);
+        const deleteBattleChars = battleChars.filter(item => item.id !== deletedCharacter.id)
+        setBattleChars(deleteBattleChars);
+    }
     
     return (
         <div>
-          <CharacterCollection  characters={characters} planets={planets} handleAddToBattleChars={handleAddToBattleChars} handleAddPlanetToBattle={handleAddPlanetToBattle} setCharacters={setCharacters} />
-          <YourBattleChars characters={characters} battleChars={battleChars} setBattleChars={setBattleChars} battlePlanets={battlePlanets} />
+          <CharacterCollection  characters={characters} planets={planets} handleAddToBattleChars={handleAddToBattleChars} handleAddPlanetToBattle={handleAddPlanetToBattle} setCharacters={setCharacters} handleDeleteCharacter={handleDeleteCharacter} />
+          <YourBattleChars characters={characters} battleChars={battleChars} setBattleChars={setBattleChars} battlePlanets={battlePlanets} handleDeleteCharacter={handleDeleteCharacter} />
         </div>
       )
 }
