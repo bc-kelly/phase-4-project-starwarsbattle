@@ -5,9 +5,9 @@ import "./CharacterCollection.css"
 
 function CharacterCollection( { characters, planets, handleAddToBattleChars, handleAddPlanetToBattle, setCharacters }) {
 
-    const characterCard = characters.map(character => {
+    const characterCard = characters.map((character) => {
         // console.log(character)
-        return <CharacterCard key={character.id} character={character} onCardClick={handleAddToBattleChars} set={setCharacters} />
+        return <CharacterCard key={character.id} character={character} onCardClick={handleAddToBattleChars} setCharacters={setCharacters} characters ={characters} />
 
     })
 

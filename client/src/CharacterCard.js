@@ -1,16 +1,17 @@
 import React from "react";
 import "./CharacterCard.css"
 
-const charactersAPI = 'http://localhost:4000/characters';
+const charactersAPI = '/characters';
 
-function CharacterCard( { character, onCardClick, setCharacters }){
-    // console.log(character)
+function CharacterCard( { character, onCardClick, setCharacters, characters }){
+    console.log(character)
 
     function handleDeleteCharacter(deletedCharacter){
+        // console.log(deletedCharacter)
         fetch(`${charactersAPI}/${deletedCharacter.id}`, {
         method: 'DELETE'
         });
-        const deleteCharacters = character.filter(item => item.id !== deletedCharacter.id)
+        const deleteCharacters = characters.filter(item => item.id !== deletedCharacter.id)
         setCharacters(deleteCharacters);
     }
 

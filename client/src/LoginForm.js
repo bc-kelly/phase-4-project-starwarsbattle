@@ -23,6 +23,7 @@ function LoginForm({ setUser }) {
         if (r.ok) {
             navigate("/");
             console.log('login success')
+            alert (`Welcome ${username}`)
             r.json().then((user) => setUser(user));
         } else {
             console.log('login failed')
