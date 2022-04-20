@@ -71,3 +71,14 @@ function EditCharacter () {
 }
 
 export default EditCharacter;
+
+// steps: 
+// set state to null
+// import {useParams} from "react-router-dom"; -- in order to access one specific character
+// const params = useParams();
+// get request 
+// add character card to return to display the get 
+// function with patch request 
+// just in case: if (!character) return null; 
+// add form to return 
+// add patch function to form
