@@ -28,7 +28,7 @@ function CharacterCard( { character, onCardClick, onClickDelete }){
             <h3> Weapons: {character.weapons} </h3>
             <div className="card-footer"> 
                 <button className='edit'> 
-                    <a href="http://localhost:4000/about"> edit </a> 
+                    <a href={`http://localhost:4000/editcharacter/${character.id}`}> edit </a> 
                 </button>
                 <button className='delete' 
                     onClick={(event) =>{

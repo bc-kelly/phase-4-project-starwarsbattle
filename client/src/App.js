@@ -38,7 +38,7 @@ function App() {
                 <Route path ="/login" element= { <Login setUser={setUser} /> } />
                 <Route path="/mainpage" element= { <MainPage />} />
                 <Route path="/newcharacterform" element= { <NewCharacterForm /> } />
-                <Route path="/editcharacter" element= { <EditCharacter /> } />
+                <Route path="/editcharacter/:id" element= { <EditCharacter /> } />
           </Routes>
     </div>
   );

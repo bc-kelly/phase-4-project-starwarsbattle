@@ -1,18 +1,23 @@
 import React, { useState , useEffect } from "react";
+import {useParams} from "react-router-dom";
 import CharacterCard from "./CharacterCard"
 
 function EditCharacter () {
 
     const charactersAPI = 'http://localhost:4000/characters';
-    const [characters, setCharacters] = useState([])
+    const [character, setCharacter] = useState([])
+
+    
+    const params = useParams();
+    console.log(params)
 
    
     useEffect(()=>{
-      fetch(charactersAPI)
+    fetch(`${charactersAPI}/${params.id}`)
       .then(response => response.json())
       .then(charactersData => {
       console.log(charactersData)
-      setCharacters(charactersData)
+      setCharacter(charactersData)
       })
       }, [])
     
@@ -33,7 +38,7 @@ function EditCharacter () {
         <div>
         <div className="edit-character">
             <h1>test from edit</h1>
-            <CharacterCard />
+            <CharacterCard character={character}/>
         </div>
     </div>
     );
