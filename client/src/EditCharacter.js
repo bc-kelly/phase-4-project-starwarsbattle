@@ -3,83 +3,50 @@ import {useParams} from "react-router-dom";
 import CharacterCard from "./CharacterCard"
 
 function EditCharacter () {
-    const {id, name} = character;
+    const params = useParams();
 
     const charactersAPI = 'http://localhost:4000/characters';
-    const [character, setCharacter] = useState([]);
-    const [updatedName, setUpdatedName] = useState(name);
-    const [characters, setCharacters]= useState([]);
-
-
-    
-    const params = useParams();
-    console.log(params)
+    const [character, setCharacter] = useState(null);
 
 //GET REQUEST
     useEffect(()=>{
     fetch(`${charactersAPI}/${params.id}`)
-      .then(response => response.json())
-      .then(charactersData => {
+    .then(response => response.json())
+    .then(charactersData => {
       console.log(charactersData)
       setCharacter(charactersData)
-      })
-      }, [])
+    })
+    }, [])
     
 
-      function handleUpdateCharacter(updatedCharacter) {
-        const updatedCharactersArray = characters.map((character) => {
-          if (character.id === updatedCharacter.id) {
-            return updatedCharacter;
-          } else {
-            return character;
-          }
-        });
-        setCharacters(updatedCharactersArray);
-      }
+    const submit = () => {
+      fetch(`${charactersAPI}/${params.id}`, {
+        method: 'PATCH',
+        headers: {
+         'Content-type': 'application/json; charset=UTF-8',
+       },
+        body: JSON.stringify(character)
+       })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+    }
 
-
-      function handleCharacterEdit(e) {
-        e.preventDefault();
-        fetch(`http://localhost:4000/characters/${id}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ name: updatedName }),
-        })
-          .then((r) => r.json())
-          .then((updatedCharacter) => {
-            handleUpdateCharacter(updatedCharacter);
-          });
-      }
-
-//     fetch(`${charactersAPI}/${params.id}`, {
-//         method: 'PATCH',
-//         headers: {
-//             'Content-type': 'application/json; charset=UTF-8',
-//         },
-//         body: JSON.stringify({ name: name }),
-        
-//     })
-//         .then((response) => response.json())
-//         .then((json) => console.log(json));
-// })
-
+    if (!character) return null;
     return (
         <div>
         <div className="edit-character">
             <h1>test from edit</h1>
             <CharacterCard character={character} />
             <div className="edit-form-div" >
-                <form onSubmit={handleCharacterEdit}>
+                <form onSubmit={submit}>
                     <div className="form">
                         <label htmlFor="name">Name</label>
                         <input 
                             id="name" 
                             type="text" 
-                            placeholder="Character Name" 
-                            value={updatedName} 
-                            onChange={(e) =>setUpdatedName(e.target.value)}
+                            placeholder="Character Name"
+                            value={character.name}
+                            onChange={(e) =>  setCharacter({ ...character, name: e.target.value})}
                         />
                     </div>
 
@@ -104,12 +71,3 @@ function EditCharacter () {
 }
 
 export default EditCharacter;
-
-// useEffect(()=>{
-//   fetch(charactersAPI)
-//   .then(response => response.json())
-//   .then(charactersData => {
-//     // console.log(charactersData)
-//     setCharacters(charactersData)
-//   })
-// }, [])
