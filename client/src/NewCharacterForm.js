@@ -42,7 +42,9 @@ function NewCharacterForm (){
     
         return(   
             <div className="form-div" >
-                <form onSubmit= {handleFormSubmit}>
+                <form className="add-form" onSubmit= {handleFormSubmit}>
+                    <div className= "empty" >
+                    </div>
                     <div className="form">
                         <label htmlFor="name">Name</label>
                         <input id="name" type="text" placeholder="Character Name" />

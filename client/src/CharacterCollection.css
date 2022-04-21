@@ -17,4 +17,13 @@ img {
 
 .character-title {
     color: white;
+    font-size: 25px;
+}
+
+.edit {
+    border-radius: 5px;
+}
+
+.delete {
+    border-radius: 5px;
 }

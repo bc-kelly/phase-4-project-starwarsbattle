@@ -6,20 +6,17 @@
   background-size: cover;
 } */
 
-.home {
+/* .home {
     color: white;
     font-family: 'Geostar';
     /* background-image: url("https://images.squarespace-cdn.com/content/v1/51b3dc8ee4b051b96ceb10de/1562167856904-7YDUWZLI6Z6JD4PCLAHT/daisy-ridley-teases-an-epic-lightsaber-fight-scene-between-rey-and-kylo-in-star-wars-the-rise-of-skywalker-social.jpg") */
 
-}
-
+/* } */
+/* 
 .home-pic {
-    /* display: flex; */
     margin: auto;
     max-width: 900px;
     height: 600px;
-    /* background-color: yellow; */
-    /* background-image: url("https://images.squarespace-cdn.com/content/v1/51b3dc8ee4b051b96ceb10de/1562167856904-7YDUWZLI6Z6JD4PCLAHT/daisy-ridley-teases-an-epic-lightsaber-fight-scene-between-rey-and-kylo-in-star-wars-the-rise-of-skywalker-social.jpg") */
 }
 
 .home-pic img {
@@ -30,4 +27,89 @@
 
 .test-pic img {
     max-width: 100%;
-}
+}  */
+
+@keyframes star {
+    0% {
+      opacity: 0;
+      transform: scale(1.5) translateY(-0.75em);
+    }
+    20% {
+      opacity: 1;
+    }
+    89% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateZ(-1000em);
+    }
+  }
+
+  @keyframes wars {
+    0% {
+      opacity: 0;
+      transform: scale(1.5) translateY(-0.75em);
+    }
+    20% {
+      opacity: 1;
+    }
+    89% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateZ(-1000em);
+    }
+  }
+
+  .star {
+    animation: star 10s ease-out infinite;
+  }
+  .wars {
+    animation: wars 10s ease-out infinite;
+  }
+
+  .starwars-demo {
+    perspective: 800px;
+    transform-style: preserve3d;
+    background-image: url("https://cssanimation.rocks/demo/starwars/images/bg.jpg") ;
+  }
+
+  @keyframes spin-letters {
+    0%, 10% {
+      opacity: 0;
+      transform: rotateY(90deg);
+    }
+    30% {
+      opacity: 1;
+    }
+    70%, 86% {
+      transform: rotateY(0);
+      opacity: 1;
+    }
+    95%, 100% {
+      opacity: 0;
+    }
+  }
+
+  .byline span {
+    animation: spin-letters 10s linear infinite;
+  }
+  .byline {
+    animation: move-byline 10s linear infinite;
+    color: white;
+    font-family: Lato;
+  }
+
+  html { 
+    background: url(https://cssanimation.rocks/demo/starwars/images/bg.jpg) no-repeat center top fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    backdrop-filter: blur(10px); 
+    /* filter: blur(8px) */
+  }

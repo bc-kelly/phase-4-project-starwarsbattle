@@ -3,6 +3,9 @@ import CharacterCard from "./CharacterCard";
 import PlanetCard from "./PlanetCard";
 import "./YourBattleChars.css"
 
+const weapons = ["Lightning", "Light Saber", "the Force"];
+
+
 function YourBattleChars({battleChars, battlePlanets, handleDeleteCharacter, handleRemoveFromYourBattleChars, handleRemoveFromYourBattlePlanets }) {
 
     const showBatCharacters = battleChars.map((batChar) => {
@@ -26,15 +29,15 @@ function YourBattleChars({battleChars, battlePlanets, handleDeleteCharacter, han
     })
   function GetValue(){
     const weapons = ["Lightning", "Light Saber", "the Force"];
-    const random = Math.floor(Math.random() * weapons.length);
-    console.log(random, weapons[random]);
+    let random = weapons[Math.floor(Math.random() * weapons.length)];
+    // console.log(random, weapons[random], "weapon");
     document.getElementById("message").innerHTML = random;
   }
 
   function GetValueOne(){
     const weapons = ["Lightning", "Light Saber", "the Force"];
-    const random = Math.floor(Math.random() * weapons.length);
-    console.log(random, weapons[random]);
+    let random = weapons[Math.floor(Math.random() * weapons.length)];
+    // console.log(random, weapons[random]);
     document.getElementById("messageOne").innerText=random;
   }
 
@@ -46,16 +49,12 @@ function YourBattleChars({battleChars, battlePlanets, handleDeleteCharacter, han
     //             counter++;
     //         }}, 160)
     // }
-
-    // function displayRandomWeapon(){
-
-    // }
        
 
     return (
         <div>
             <div className="character-title">
-                <h3>Get Ready to Battle</h3>
+                <h3>Battle Station</h3>
             </div>
             <div className="batCharContainer">
                 {showBatCharacters}
@@ -66,7 +65,7 @@ function YourBattleChars({battleChars, battlePlanets, handleDeleteCharacter, han
                     <p className="weapon-text">
                     Your Battle Weapons:
                         <ul className="weapon-list">
-                            <li>Lighting</li>
+                            <li>Lightning</li>
                             <li>Light Saber</li>
                             <li>the Force</li>
                         </ul>
@@ -77,7 +76,7 @@ function YourBattleChars({battleChars, battlePlanets, handleDeleteCharacter, han
                     <p className="weapon-text">
                         Your Battle Weapons:
                         <ul className="weapon-list">
-                            <li>Lighting</li>
+                            <li>Lightning ⚡️ </li>
                             <li>Light Saber</li>
                             <li>the Force</li>
                         </ul>

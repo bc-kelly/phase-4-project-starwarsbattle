@@ -33,7 +33,10 @@ function LoginForm({ setUser }) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="add-form" onSubmit={handleSubmit}>
+            <div className="empty" > 
+
+            </div>
             <div>
                 <label htmlFor="username"> Username </label>
                 <input

@@ -34,43 +34,45 @@ function SignUpForm({ setUser }) {
 
     return (
         <form className = "signup" onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="username" className="signup" > Username </label>
-                <input
-                type="text"
-                id="username"
-                autoComplete="off"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                />
-            </div>
-            <div>
-                <label htmlFor="password">Password</label>
-                <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                autoComplete="current-password"
-                />
-            </div>
-            <div>
-                <label htmlFor="password">Password Confirmation</label>
-                <input
-                type="password"
-                id="password_confirmation"
-                value={passwordConfirmation}
-                onChange={(e) => setPasswordConfirmation(e.target.value)}
-                autoComplete="current-password"
-                />
-            </div>
-            <div>
-                <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
-            </div>
-            <div>
-                {errors.map((err) => (
-                <error key={err}>{err}</error>
-                ))}
+            <div className="form-stars">
+                <div>
+                    <label htmlFor="username" className="signup" > Username </label>
+                    <input
+                    type="text"
+                    id="username"
+                    autoComplete="off"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="password">Password</label>
+                    <input
+                    type="password"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    autoComplete="current-password"
+                    />
+                </div>
+                <div>
+                    <label htmlFor="password">Password Confirmation</label>
+                    <input
+                    type="password"
+                    id="password_confirmation"
+                    value={passwordConfirmation}
+                    onChange={(e) => setPasswordConfirmation(e.target.value)}
+                    autoComplete="current-password"
+                    />
+                </div>
+                <div>
+                    <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
+                </div>
+                <div>
+                    {errors.map((err) => (
+                    <error key={err}>{err}</error>
+                    ))}
+                </div>
             </div>
         </form>
     );

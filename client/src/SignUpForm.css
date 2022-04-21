@@ -1,4 +1,13 @@
-.singup {
+.signup {
     color: white;
     /* background-color: blue; */
+    background-image: url("https://cssanimation.rocks/demo/starwars/images/bg.jpg");
+    vertical-align: middle;
 }
+
+.form-stars {
+    background-image: url("https://cssanimation.rocks/demo/starwars/images/bg.jpg");
+}
+
+
+

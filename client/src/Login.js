@@ -10,6 +10,10 @@ function Login({ setUser }) {
 
   return (
     <wrapper className= "login">
+      <div className= "login"> 
+       {/* <div className="empty" > 
+
+      </div>   */}
       {showLogin ? (
         <>
           <LoginForm setUser={setUser} />
@@ -33,6 +37,7 @@ function Login({ setUser }) {
           </p>
         </>
       )}
+      </div>
     </wrapper>
   );
 }

@@ -1,4 +1,22 @@
 .form {
-    padding: 20px;
+    /* padding: 20px; */
     /* border: 1px solid white; */
+}
+
+.form-div {
+    background-image: url("https://cssanimation.rocks/demo/starwars/images/bg.jpg");
+}
+
+.add-form {
+    /* margin-top: 5%; */
+    vertical-align: middle;
+}
+
+.add-form input[type=text], select {
+    width: 20%
+}
+
+.empty {
+    min-height: 50px;
+    background-image: url("https://cssanimation.rocks/demo/starwars/images/bg.jpg");
 }
