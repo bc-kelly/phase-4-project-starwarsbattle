@@ -58,11 +58,21 @@ function MainPage(){
         const deleteBattleChars = battleChars.filter(item => item.id !== deletedCharacter.id)
         setBattleChars(deleteBattleChars);
     }
+
+    function handleRemoveFromYourBattleChars(battleChar){
+      const removeBattleChar = battleChars.filter(item => item.id !== battleChar.id)
+      setBattleChars(removeBattleChar)
+    }
+
+    function handleRemoveFromYourBattlePlanets(battlePlanet){
+      const removeBattlePlanet = battlePlanets.filter(item => item.id !== battlePlanet.id)
+      setBattlePlanets(removeBattlePlanet)
+    }
     
     return (
         <div>
           <CharacterCollection  characters={characters} planets={planets} handleAddToBattleChars={handleAddToBattleChars} handleAddPlanetToBattle={handleAddPlanetToBattle} setCharacters={setCharacters} handleDeleteCharacter={handleDeleteCharacter} />
-          <YourBattleChars characters={characters} battleChars={battleChars} setBattleChars={setBattleChars} battlePlanets={battlePlanets} handleDeleteCharacter={handleDeleteCharacter} />
+          <YourBattleChars characters={characters} battleChars={battleChars} setBattleChars={setBattleChars} battlePlanets={battlePlanets} handleDeleteCharacter={handleDeleteCharacter} handleRemoveFromYourBattleChars={handleRemoveFromYourBattleChars} handleRemoveFromYourBattlePlanets={handleRemoveFromYourBattlePlanets} />
         </div>
       )
 }

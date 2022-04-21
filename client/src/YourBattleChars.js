@@ -3,14 +3,15 @@ import CharacterCard from "./CharacterCard";
 import PlanetCard from "./PlanetCard";
 import "./YourBattleChars.css"
 
-function YourBattleChars({battleChars, battlePlanets, handleDeleteCharacter }) {
+function YourBattleChars({battleChars, battlePlanets, handleDeleteCharacter, handleRemoveFromYourBattleChars, handleRemoveFromYourBattlePlanets }) {
 
     const showBatCharacters = battleChars.map((batChar) => {
         return (
             <CharacterCard 
             key={batChar.id} 
             character={batChar}
-            onClickDelete={handleDeleteCharacter}/>
+            onClickDelete={handleDeleteCharacter}
+            onCardClick={handleRemoveFromYourBattleChars} />
         
         )
     })
@@ -19,6 +20,7 @@ function YourBattleChars({battleChars, battlePlanets, handleDeleteCharacter }) {
             <PlanetCard 
             key={batPlanet.id} 
             planet={batPlanet}
+            onCardClick={handleRemoveFromYourBattlePlanets}
             />
         )
     })
