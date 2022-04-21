@@ -76,7 +76,7 @@ function YourBattleChars({battleChars, battlePlanets, handleDeleteCharacter, han
                     <p className="weapon-text">
                         Your Battle Weapons:
                         <ul className="weapon-list">
-                            <li>Lightning ⚡️ </li>
+                            <li>Lightning</li>
                             <li>Light Saber</li>
                             <li>the Force</li>
                         </ul>
