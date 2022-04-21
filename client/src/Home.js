@@ -16,8 +16,9 @@ function Home(){
         </div> */}
         <div className="starwars-demo">
             <img src="https://cssanimation.rocks/demo/starwars/images/star.svg" alt="Star" className="star" /> 
+            {/* <img src="https://cssanimation.rocks/demo/starwars/images/wars.svg" alt="Wars" className="wars" /> */}
+            <h2 className="byline" id="byline">Intergalatic Battle</h2>
             <img src="https://cssanimation.rocks/demo/starwars/images/wars.svg" alt="Wars" className="wars" />
-            <h1 className="byline" id="byline">Battle of the Known Universe</h1>
         </div>
     </div>
     );
