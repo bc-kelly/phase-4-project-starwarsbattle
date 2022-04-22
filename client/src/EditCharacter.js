@@ -35,7 +35,7 @@ function EditCharacter () {
     return (
         <div>
         <div className="edit-character">
-            <h1>test from edit</h1>
+            {/* <h1>test from edit</h1> */}
             <CharacterCard character={character} />
             <div className="edit-form-div" >
                 <form onSubmit={submit}>
