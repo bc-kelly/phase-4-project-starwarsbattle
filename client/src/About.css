@@ -10,7 +10,7 @@
   overflow: hidden;
   font-family: 'Roboto';
   /* push down the the wrapper by half the page */
-  margin: 50% 0 0 0;
+  margin:50% 0 0 0;
   position: relative;
 }
 .wrapper::after {
@@ -45,6 +45,6 @@ h1,h2 {
 }
 
 @keyframes scroll {
-	from { top: 0; transform: translateZ(0) rotateX(20deg); }
+	from { top: 0; transform: translateZ(0) rotateX(15deg); }
 	to { top: -7500px; transform: translateZ(-2500px) rotateX(21deg); }
 }

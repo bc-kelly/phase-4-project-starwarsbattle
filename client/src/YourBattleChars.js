@@ -49,6 +49,8 @@ function YourBattleChars({battleChars, battlePlanets, handleDeleteCharacter, han
     //             counter++;
     //         }}, 160)
     // }
+
+
        
 
     return (
