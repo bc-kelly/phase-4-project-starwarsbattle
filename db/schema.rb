@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_21_193737) do
+ActiveRecord::Schema.define(version: 2022_05_11_201001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "account_name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "battles", force: :cascade do |t|
     t.string "name"
@@ -34,11 +42,47 @@ ActiveRecord::Schema.define(version: 2022_04_21_193737) do
     t.string "quote"
   end
 
+  create_table "hotels", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.string "city"
+    t.string "state"
+    t.string "tag"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "link"
+  end
+
   create_table "planets", force: :cascade do |t|
     t.string "name"
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.bigint "account_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_profiles_on_account_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "date_start"
+    t.string "date_end"
+    t.integer "points"
+    t.bigint "profile_id", null: false
+    t.bigint "hotel_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "booked"
+    t.integer "account_id"
+    t.index ["hotel_id"], name: "index_trips_on_hotel_id"
+    t.index ["profile_id"], name: "index_trips_on_profile_id"
   end
 
   create_table "user_battles", force: :cascade do |t|
@@ -59,6 +103,9 @@ ActiveRecord::Schema.define(version: 2022_04_21_193737) do
 
   add_foreign_key "battles", "characters"
   add_foreign_key "battles", "planets"
+  add_foreign_key "profiles", "accounts"
+  add_foreign_key "trips", "hotels"
+  add_foreign_key "trips", "profiles"
   add_foreign_key "user_battles", "battles"
   add_foreign_key "user_battles", "users"
 end
